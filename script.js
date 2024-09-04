@@ -4,7 +4,7 @@ const coordinates = {
   'C': { x: 2, y: -1 }
 };
 
-const canvas = document.getElementById('canvas');
+const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 const spacing = 37.795;
 const textOffset = -2.5;
@@ -84,3 +84,24 @@ const drawCoordinatePlane = () => {
 };
 
 drawCoordinatePlane();
+
+const form = document.querySelector('#form');
+
+const validateForm = (e) => {
+  e.preventDefault();
+
+  const coordinate = document.querySelector('#coord').value.toUpperCase();
+  const xValue = Number(document.querySelector('#xCoord').value);
+  const yValue = Number(document.querySelector('#yCoord').value);
+
+  coordinates[coordinate] = {
+    x: xValue,
+    y: yValue
+  };
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  drawCoordinatePlane();
+};
+
+form.addEventListener("submit", validateForm);

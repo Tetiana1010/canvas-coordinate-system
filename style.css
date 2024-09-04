@@ -9,11 +9,95 @@ h1 {
   margin-bottom: 10px;
 }
 
-#canvas {
+.coordinate-container {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
+.coordinate-container #canvas {
   border: 1px solid #333;
   border-radius: 8px;
   background-color: #f0f0f020;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
   display: block;
+}
+
+.coordinate-container form {
+  width: 250px;
+  padding: 15px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coordinate-container fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.coordinate-container form div {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.coordinate-container form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  padding: 0 4px;
+}
+
+.coordinate-container form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.coordinate-container form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.coordinate-container form input[type="number"]::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.coordinate-containerform input[type="number"] {
+  text-align: center;
+}
+
+.add-coordinate-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.add-coordinate-btn:hover {
+  background-color: #45a049;
+}
+
+.add-coordinate-btn:active {
+  background-color: #3e8e41;
+  transform: scale(0.98);
+}
+
+.add-coordinate-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px #4CAF50;
 }
