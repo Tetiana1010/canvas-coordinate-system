@@ -105,3 +105,16 @@ const validateForm = (e) => {
 };
 
 form.addEventListener("submit", validateForm);
+
+const addCoord = (event) => {
+  const rect = canvas.getBoundingClientRect();
+  const x = event.clientX - rect.left
+  const y = event.clientY - rect.top;
+  
+  ctx.beginPath();
+  ctx.arc(x, y, 3, 0, 2 * Math.PI);
+  ctx.fill();
+}
+
+canvas.addEventListener("click", addCoord);
+
